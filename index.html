@@ -58,7 +58,7 @@ address{
   left: 0;
   width: 100%;
   z-index: 1000; /* High z-index to keep it above other content */
-  background: #F7F7F7; /* Or the color of your header */
+  background: #F7F7F7;
 }
 
 /* Add top padding to the body equal to the header height */
@@ -166,7 +166,7 @@ body {
   display: flex;
   box-sizing: border-box;
   position: relative;
-margin-top: 118px;
+  margin-top: 118px;
 }
 .bg_image {
  background-image: url(2.jpg);
@@ -752,6 +752,9 @@ margin-bottom: 10px;
     margin-left: 20px;
     margin-right: 20px;
 }
+.bg_section {
+    margin-top: 84px;
+}
 }
 
 @media screen and (max-width: 768px){
@@ -802,6 +805,9 @@ margin-left: 0px;
 }
 .bg_text {
   font-size: 14px;
+}
+.bg_section {
+    margin-top: 50px;
 }
 .service {
     flex-wrap: wrap;
@@ -1023,7 +1029,7 @@ display: flex;
 }
 .dropdown-menu2 {
   margin-top: 10px;
-  max-width: 140px;
+  max-width: 200px;
   left: 0px;
 }
 .dropdown-menu, .dropdown-menu2 {
@@ -1051,6 +1057,12 @@ display: flex;
 }
 .serv_text_point {
     font-size: 14px;
+}
+.bg_section {
+    margin-top: 43px;
+}
+.main-container {
+    margin-bottom: 0px;
 }
 }
 @media screen and (max-width: 475px){
@@ -1168,11 +1180,11 @@ max-height: 100%;
           <li class="item dropdown">
             <a class="item-menu" href="#serv">SERVICES</a>
             <ul class="dropdown-menu">
-              <li><a href="#large_serv">Laying Large Tiles</a></li>
+              <li><a href="#porselain_serv">Wide Format Porcelain Installation</a></li>        
               <li><a href="#gutting_serv">Custom Tile Cutting</a></li>
-              <li><a href="#mosaic_serv">Laying Mosaic Tiles</a></li>
+              <li><a href="#large_serv">Laying Large Tiles</a></li>
               <li><a href="#stone_serv">Stone Installation</a></li>
-              <li><a href="#porselain_serv">Wide Format Porcelain Installation</a></li>
+              <li><a href="#mosaic_serv">Laying Mosaic Tiles</a></li>
               <li><a href="#exteriol_serv">Exterior Tile Laying</a></li>
               <li><a href="#restoration_serv">Tile Restoration</a></li>
               <li><a href="#repair_serv">Tile Repair - Removal and Disposal</a></li>
@@ -1208,11 +1220,11 @@ max-height: 100%;
             <a class="mob-list_link" href="#serv">SERVICES</a>
             <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
                       <ul class="dropdown-menu2">
-                        <li><a href="#large_serv">Laying Large Tiles</a></li>
+                        <li><a href="#porselain_serv">Wide Format Porcelain Installation</a></li>        
                         <li><a href="#gutting_serv">Custom Tile Cutting</a></li>
-                        <li><a href="#mosaic_serv">Laying Mosaic Tiles</a></li>
+                        <li><a href="#large_serv">Laying Large Tiles</a></li>
                         <li><a href="#stone_serv">Stone Installation</a></li>
-                        <li><a href="#porselain_serv">Wide Format Porcelain Installation</a></li>
+                        <li><a href="#mosaic_serv">Laying Mosaic Tiles</a></li>
                         <li><a href="#exteriol_serv">Exterior Tile Laying</a></li>
                         <li><a href="#restoration_serv">Tile Restoration</a></li>
                         <li><a href="#repair_serv">Tile Repair - Removal and Disposal</a></li>
@@ -1266,23 +1278,24 @@ max-height: 100%;
           <h2 class="serv_title" id="serv">OUR SERVISES</h2>
           <div class="serv_wrapp">
 
-            <div class="service" id="large_serv">
-                <div class="service_text">
-                    <h3 class="serv_title_point"><a style="font-weight: 800;">LARGE TILE INSTALLATION</a></h3>
-                    <p class="serv_text_point">Every tile, regardless of its size, deserves a professional installation. Our large-format tile installation service embodies this philosophy, delivering exceptional results even for the most challenging projects. We work with all types of tiles – from classic options to ultra-modern, wide-format products, transforming each space into a work of art.</p>
-                    <p class="serv_text_point">Our uniqueness lies in our detailed understanding of the characteristics of large-format tiles and the use of advanced installation techniques, ensuring a flawless appearance and durability. We possess all the necessary materials and tools to guarantee that each tile will be installed with utmost precision and care. Choosing us means not only receiving quality service but also confidence that your interior will look impeccable for years to come.</p>
-                  </div>
-                <div class="service_image">
-                  <div>
-                    <img src="large1.jpg" alt="Laying Large Tiles">
-                    <img src="large4.jpg" alt="Laying Large Tiles">
-                  </div>
-                  <div class="block">
-                    <img src="large3.jpg" alt="Laying Large Tiles">
-                    <img src="large2.jpg" alt="Laying Large Tiles">
-                  </div>
-                </div>
-            </div>
+
+            
+      <div class="service" id="porselain_serv">
+        <div class="service_text">
+            <h3 class="serv_title_point"><a style="font-weight: 800;">WIDE FORMAT PORCELAIN INSTALLATION</a></h3>
+            <p class="serv_text_point">Wide format porcelain tiles offer a sleek, contemporary look that can open up spaces with a smooth, seamless finish. Our wide format porcelain installation service is designed to handle the unique challenges these large tiles present. We ensure precision in every aspect, from subfloor preparation to the meticulous laying of each porcelain piece. The result is a stunning, durable surface that captures the eye and withstands the test of time.</p>
+          </div>
+        <div class="service_image">
+          <div>
+            <img src="porcelain.jpeg" alt="Laying Large Tiles">
+            <img src="porcelain3.jpeg" alt="Laying Large Tiles">
+          </div>
+          <div class="block">
+            <img src="porcelain1jpeg.jpeg" alt="Laying Large Tiles">
+            <img src="porcelain4.jpeg" alt="Laying Large Tiles">
+          </div>
+        </div>
+    </div>
 
             
             <div class="service srrvics4" id="gutting_serv">
@@ -1302,19 +1315,21 @@ max-height: 100%;
               </div>
           </div>
           
-          <div class="service" id="mosaic_serv">
+
+          <div class="service" id="large_serv">
             <div class="service_text">
-                <h3 class="serv_title_point"><a style="font-weight: 800;">LAYING MOSAIC TILES</a></h3>
-                <p class="serv_text_point">The art of laying mosaic tiles is a delicate process that transforms spaces into canvases of intricate beauty. Specializing in this service, we ensure that every tiny piece contributes to the overall masterpiece. Our skilled artisans meticulously place each tile, ensuring perfect alignment and symmetry that complements the unique design aspirations of our clients. Whether it's a splashback that becomes the focal point of a kitchen or an elaborate entryway floor design, our mosaic tile installation is guided by precision and artistic vision. Utilizing the latest techniques and the finest materials, we create durable and stunning surfaces that stand the test of time. Our commitment to excellence is evident in every tile we lay, promising an end result that not only meets but exceeds expectations. Engage with our services for an exquisite touch that adds timeless elegance to any space.</p>
+                <h3 class="serv_title_point"><a style="font-weight: 800;">LARGE TILE INSTALLATION</a></h3>
+                <p class="serv_text_point">Every tile, regardless of its size, deserves a professional installation. Our large-format tile installation service embodies this philosophy, delivering exceptional results even for the most challenging projects. We work with all types of tiles – from classic options to ultra-modern, wide-format products, transforming each space into a work of art.</p>
+                <p class="serv_text_point">Our uniqueness lies in our detailed understanding of the characteristics of large-format tiles and the use of advanced installation techniques, ensuring a flawless appearance and durability. We possess all the necessary materials and tools to guarantee that each tile will be installed with utmost precision and care. Choosing us means not only receiving quality service but also confidence that your interior will look impeccable for years to come.</p>
               </div>
             <div class="service_image">
               <div>
-                <img src="mosaica1.jpg" alt="Laying Large Tiles">
-                <img src="mosaica4.jpg" alt="Laying Large Tiles">
+                <img src="large1.jpg" alt="Laying Large Tiles">
+                <img src="large4.jpg" alt="Laying Large Tiles">
               </div>
               <div class="block">
-                <img src="mosaica3.jpg" alt="Laying Large Tiles">
-                <img src="mosaica6.jpg" alt="Laying Large Tiles">
+                <img src="large3.jpg" alt="Laying Large Tiles">
+                <img src="large2.jpg" alt="Laying Large Tiles">
               </div>
             </div>
         </div>
@@ -1336,19 +1351,19 @@ max-height: 100%;
           </div>
       </div>
 
-      <div class="service" id="porselain_serv">
+      <div class="service" id="mosaic_serv">
         <div class="service_text">
-            <h3 class="serv_title_point"><a style="font-weight: 800;">WIDE FORMAT PORCELAIN INSTALLATION</a></h3>
-            <p class="serv_text_point">Wide format porcelain tiles offer a sleek, contemporary look that can open up spaces with a smooth, seamless finish. Our wide format porcelain installation service is designed to handle the unique challenges these large tiles present. We ensure precision in every aspect, from subfloor preparation to the meticulous laying of each porcelain piece. The result is a stunning, durable surface that captures the eye and withstands the test of time.</p>
+            <h3 class="serv_title_point"><a style="font-weight: 800;">LAYING MOSAIC TILES</a></h3>
+            <p class="serv_text_point">The art of laying mosaic tiles is a delicate process that transforms spaces into canvases of intricate beauty. Specializing in this service, we ensure that every tiny piece contributes to the overall masterpiece. Our skilled artisans meticulously place each tile, ensuring perfect alignment and symmetry that complements the unique design aspirations of our clients. Whether it's a splashback that becomes the focal point of a kitchen or an elaborate entryway floor design, our mosaic tile installation is guided by precision and artistic vision. Utilizing the latest techniques and the finest materials, we create durable and stunning surfaces that stand the test of time. Our commitment to excellence is evident in every tile we lay, promising an end result that not only meets but exceeds expectations. Engage with our services for an exquisite touch that adds timeless elegance to any space.</p>
           </div>
         <div class="service_image">
           <div>
-            <img src="porcelain.jpeg" alt="Laying Large Tiles">
-            <img src="porcelain3.jpeg" alt="Laying Large Tiles">
+            <img src="mosaica1.jpg" alt="Laying Large Tiles">
+            <img src="mosaica4.jpg" alt="Laying Large Tiles">
           </div>
           <div class="block">
-            <img src="porcelain1jpeg.jpeg" alt="Laying Large Tiles">
-            <img src="porcelain4.jpeg" alt="Laying Large Tiles">
+            <img src="mosaica3.jpg" alt="Laying Large Tiles">
+            <img src="mosaica6.jpg" alt="Laying Large Tiles">
           </div>
         </div>
     </div>
@@ -1462,7 +1477,7 @@ max-height: 100%;
 
 <div class="service" id="fireplace_serv">
 <div class="service_text">
-    <h3 class="serv_title_point"><a style="font-weight: 800;">FIREPLACE INSTALLATIOM</a></h3>
+    <h3 class="serv_title_point"><a style="font-weight: 800;">FIREPLACE INSTALLATION</a></h3>
     <p class="serv_text_point">Fireplace installation is a service that combines aesthetics with functionality, creating a focal point in your home that is both beautiful and practical. At Master Builders VS LTD, we specialize in the professional installation of various types of fireplaces, tailored to the specific needs and preferences of our clients.</p>
     <p class="serv_text_point">Our process begins with a detailed consultation to understand your vision and requirements. Whether you prefer a traditional wood-burning fireplace, a modern gas fireplace, or an electric one, our team has the expertise to bring your vision to life. We take into account the style of your home, the desired location of the fireplace, and the necessary safety measures.</p>
     <p class="serv_text_point">Our installation process is thorough and precise, ensuring that the fireplace not only looks great but also functions safely and efficiently. We handle everything from the structural modifications required for installation to the final touches that integrate the fireplace seamlessly into your living space.</p>
@@ -1662,6 +1677,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
     });
   });
+
+
+  document.querySelectorAll('.dropdown-menu2 a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Закриття мобільного меню
+    const mobMenu = document.querySelector(".mob-menu");
+    mobMenu.classList.add("is-hidden");
+    document.body.classList.remove("no-scroll");
+
+    // Перехід до відповідної секції
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+
 
   </script>
 </html>
