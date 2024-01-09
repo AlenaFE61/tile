@@ -52,6 +52,33 @@ a{
 address{
   padding-top: 20px;
 }
+.header {
+  position: fixed; /* Fixed positioning */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* High z-index to keep it above other content */
+  background: white; /* Or the color of your header */
+}
+
+/* Add top padding to the body equal to the header height */
+/* Adjust '70px' to the actual height of your header */
+body {
+  padding-top: 70px;
+}
+
+/* Style for offsetting anchor targets */
+.anchor-offset::before {
+  content: '';
+  display: block;
+  height: 70px; /* same as fixed header height */
+  margin: -70px 0 0; /* negative value of fixed header height */
+}
+
+/* Apply 'anchor-offset' class to each section that is a target for anchor links */
+.bg_section, .block_about, .serv_section {
+  position: relative;
+}
 .mob-container{
     display: none;
 }
@@ -221,7 +248,7 @@ address{
 .b{
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-around;;
+  justify-content: flex-end;
   width: 100%;
 }
 .wrap_logo{
@@ -418,7 +445,7 @@ font-size: 16px;
 
 .service_image img {
     width: 100%; /* adjust as needed */
-    max-width: 200px; /* adjust as needed */
+    max-width: 300px; /* adjust as needed */
 }
 
 .serv_wrapp {
@@ -433,6 +460,8 @@ font-size: 16px;
     border: 3px solid #8f8a8a;
     border-radius: 20px;
     padding: 20px 0px;
+    align-items: center;
+    height: 460px;
 }
 .serv_title{
   margin-bottom: 30px;
@@ -445,6 +474,7 @@ font-size: 16px;
     flex: 1; /* Both take up equal space */
 text-align: center;
 position: relative;
+padding-right: 20px;
 }
 .second_point_bottom{
   position: absolute;
@@ -480,9 +510,12 @@ position: absolute;
     z-index: 1;
 }
 .srrvics4{
-  padding: 60px 0px;
+  padding: 120px 0px;
 }
-
+.about_inform{
+  text-align: center;
+  padding: 60px;
+}
 @media screen and (max-width: 2000px){
 .content p {
   max-width: 450px;
@@ -497,36 +530,24 @@ position: absolute;
   position: relative;
   bottom: 37px;
 }
-.bg_section {
-  padding-bottom: 150px;
-}
-.bg_title {
-  font-size: 50px;
-}
-.bg_image {
-  height: 110%;
-}
-.bg_content {
-  padding-left: 2%;
-}
-.bg_section {
-  height: 800px;
-  padding-top: 120px;
-  padding-bottom: 80px;
-}
 }
 
 @media screen and (max-width: 1600px){
 .dropdown-menu{
   max-width: 160px;
 }
-.bg_section {
-  height: 750px;
-  padding-top: 120px;
-  padding-bottom: 60px;
+.about_inform{
+    text-align: center;
+    padding: 20px;
+    width: 130%;
 }
-.bg_image {
-  height: 110%;
+.serv_section {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.service_text {
+    padding-right: 0px;
+    padding-left: 0px; 
 }
 }
 
@@ -536,25 +557,6 @@ position: absolute;
 }
 .item{
   margin-right: 20px;
-}
-.footer-block{
-  flex-wrap: wrap;
-}
-.footer_bg {
-  height: 561px;
-}
-.wrap_logo{
-  margin-left: 0px;
-}
-.a {
-  width: 93%;
-}
-.footer_list_menu {
-  text-align: center;
-}
-.footer-contacts{
-  text-align: center;
-  padding-right: 110px;
 }
 .content {
   bottom: 40px;
@@ -568,21 +570,39 @@ position: absolute;
 .bg_title {
   font-size: 36px;
 }
-.bg_image {
-  height: 100%;
-}
-.bg_content {
-  padding-left: 0%;
-}
 .bg_text {
   font-size: 18px;
 }
-.bg_section {
-  height: 600px;
-  padding-top: 100px;
-}
-}
 
+.serv_section {
+    margin-top: 50px;
+}
+.second_point_bottom{
+    right: 44%;
+}
+.second_point_top{
+    right: 10%;
+}
+.srrvics4 {
+  padding: 0px 0px; 
+}
+.block_about {
+    margin-bottom: 30px;
+}
+.about_inform{
+  text-align: center;
+  padding: 0px 20px;
+    width: 100%;
+}
+.service_image img {
+    max-width: 280px;
+}
+}
+@media screen and (max-width: 1260px){
+  .service_image img {
+    max-width: 250px;
+}
+}
 @media screen and (max-width: 1200px){
 .logo{
   margin-left: 20px;
@@ -605,12 +625,15 @@ position: absolute;
   text-transform: uppercase;
   color: #353232;
 }
-.img1{
-  width: 460px;
-  height: 460px;
+.block_about {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-left: 0px;
 }
 .about_inform{
   padding-top: 0px;
+  padding-bottom: 30px;
 }
 .about_title{
 margin-bottom: 10px;
@@ -633,48 +656,38 @@ margin-bottom: 10px;
 }
 .bg_section {
   height: 500px;
-  padding-top: 80px;
-  padding-bottom: 0px;
-}
-.bg_image {
-  height: 90%;
-}
-.bg_title {
-  padding-top: 40px;
-}
 }
 
-@media screen and (max-width: 999px){
-.main-container{
-	padding-left:20px;
-}
-.bg_title{
-  font-size: 40px;
-  max-width: 960px;
-}
-.block_about{
-  display: block;
-  margin-top: 72px;
-  margin-left: 30px;
-  margin-bottom: 36px;
-  margin-left: 0px;
+.footer_logo img {
+    width: 150px;
 }
 .img1 {
-  margin: 0 auto;
+ 
   text-align: center;
-  width: 560px;
+}
+.img1 img{
+  width: 70%;
   height: 460px;
 }
-.img1 img {
-  height: 100%;
-  width: auto;
-  margin: 0 auto;
-  text-align: center;
+.service_image img {
+    max-width: 240px;
 }
-.about_inform{
-  padding-top: 40px;
-  padding-left: 50px;
-  text-align: center;
+.serv_text_point {
+    font-size: 16px;
+}
+.service_image img {
+    max-width: 220px;
+}
+}
+@media screen and (max-width: 1015px){
+.second_point_bottom{
+  position: static;
+}
+.second_point_top{
+  position: static;
+}
+.main-container{
+	padding-left:20px;
 }
 .img2{
   width: 660px;
@@ -696,12 +709,21 @@ margin-bottom: 10px;
 .bg_text {
   font-size: 16px;
 }
-.bg_image {
-  height: 80%;
-}
 .bg_section {
-  height: 400px;
-  padding-top: 60px;
+  height: 350px;
+}
+.bg_content {
+    padding-top: 0px;
+
+}
+.service {
+    height: auto;
+}
+.service_image img {
+    max-width: 300px;
+}
+.block{
+  display: none;
 }
 }
 
@@ -719,6 +741,16 @@ margin-bottom: 10px;
 .block_about {
   margin-top: 40px;
 }
+.serv_section {
+    margin-top: 0px;
+}
+.footer_bg {
+    padding-left: 40px;
+}
+.serv_section {
+    margin-left: 20px;
+    margin-right: 20px;
+}
 }
 
 @media screen and (max-width: 768px){
@@ -735,30 +767,19 @@ margin-bottom: 10px;
 .logo {
 margin-left: 0px;
 }
-.bg_title{
-  font-size: 30px;
-  max-width: 720px;
-}
-.bg_text{
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.33;
-}
-.img1 {
-  width: 390px;
-  height: 320px;
-  margin: 0 auto;
-  text-align: center;
+.img1 img {
+    height: 400px;
 }
 .about_inform{
-  padding-top: 40px;
-  padding-left: 50px;
+  padding-top: 0px;
+  padding-left: 0px;
 }
 .footer_bg {
-  height: 554px;
+    height: 300px;
 }
 .footer-contacts {
   padding-right: 50px;
+
 }
 .dropdown-toggle {
   display: inline-block;
@@ -775,34 +796,60 @@ margin-left: 0px;
 .dropdown-menu{
   font-size: 14px;
 }
-.bg_section {
-  height: 350px;
-}
 .bg_title {
   font-size: 24px;
 }
 .bg_text {
   font-size: 14px;
 }
-.bg_image {
-  height: 80%;
+.service {
+    flex-wrap: wrap;
+}
+.service_text {
+    flex: auto;
+}
+.service_image {
+  flex: auto;
+}
+.twice{
+display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.serv_text_point {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+.second_point_bottom {
+    padding-right: 5px;
+}
+.service_image {
+    padding-right: 0px;
 }
 }
 
 @media screen and (max-width: 669px){
 .footer_bg {
-  height: 900px;
+  height: 470px;
   padding-right: 50px;
   padding-left: 50px;
+}
+.footer-block {
+    flex-wrap: wrap;
 }
 .footer_services {
  padding-left: 50px;
  padding-right: 50px;
 }
+.b{
+  justify-content: space-around;
+}
 .footer-contacts {
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 20px;
+
 }
 .big-number {
   padding-bottom: 40px;
@@ -819,8 +866,24 @@ margin-left: 0px;
 .bg_text {
   font-size: 12px;
 }
+.serv_text_point {
+    font-size: 16px;
 }
-
+.service_image img {
+    max-width: 270px;
+}
+}
+@media screen and (max-width: 600px){
+  .service_image img {
+    max-width: 300px;
+}
+.twice {
+    display: block;
+}
+.second_point_bottom {
+    padding-right: 0px;
+}
+}
 @media screen and (max-width: 540px){
 .navigation-menu{
   display: none;
@@ -895,17 +958,14 @@ margin-left: 0px;
 .text_cir{
   font-weight: 600;
 }
-.img1 {
-  width: 100%;
-  height: 265px;
-  margin: auto;
-  text-align: center;
+.img1 img {
+    height: 300px;
 }
 .have_account_main {
   padding-top: 10px;
 }
 .footer_bg {
-  height: 1162px;
+  height: 610px;
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -951,8 +1011,9 @@ margin-left: 0px;
   height: auto;
   max-height: 100%;
 }
-.wrap_logo{
-  max-width: 480px;
+.wrap_logo {
+  max-width: 100%;
+  margin-left: 0px;
 }
 .policy_btn_accept,
 .policy_btn_reject{
@@ -969,16 +1030,13 @@ margin-left: 0px;
 }
 .bg_section {
   height: 240px;
-  padding-top: 30px;
 }
 .bg_content {
   padding-top: 0%;
 }
 .bg_title {
   font-size: 18px;
-}
-.bg_image {
-  height: 90%;
+  padding-top: 0px;
 }
 .about_title {
   font-size: 18px;
@@ -990,33 +1048,35 @@ margin-left: 0px;
 .about_more {
   font-size: 18px;
 }
+.serv_text_point {
+    font-size: 14px;
+}
 }
 @media screen and (max-width: 475px){
-.bg_image {
+/* .bg_image {
   background-image: url(../12.webp);
   flex: 0 0 50%;
- }
+ } */
+ .bg_title {
+    margin-top: 20px;
+}
+ .twice {
+    display: block;
+}
+.service_text {
+    padding-right: 0px;
+    padding-left: 0px;
+}
 }
 @media screen and (max-width: 425px){
-  .bg_title {
-    font-size: 16px;
+  .bg_content {
+    padding-left: 0px;
+    padding-right: 0px;
 }
-.bg_section {
-  height: 200px;
-  padding-top: 20px;
-}
-.bg_content {
-  max-width: 166px;
-}
-.bg_image {
-  height: 90%;
-}
-.bg_title {
-  padding-top: 0px;
-}
-.bg_text {
-  margin-top: 10px;
-  max-width: 166px;
+.service_image img {
+    max-width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 }
 @media screen and (max-width: 320px){
@@ -1047,9 +1107,6 @@ margin-left: 0px;
 .menu-close {
   margin-right:10px;
 }
-.footer_bg {
-  height: 1162px;
-}
 .footer_navigation-menu {
   margin-left: 0px;
 }
@@ -1063,6 +1120,9 @@ max-height: 100%;
 }
 .footer-contacts {
   padding-left: 0px;
+}
+.serv_section{
+  padding-top: 10px;
 }
 }
 .serv_title{
@@ -1187,7 +1247,7 @@ max-height: 100%;
             <div class="img1 wrapper" style="width: 100%;">
                 <img src="3.jpg" alt="ofice" style="width: 100%;">
             </div>
-            <div class="about_inform" style="text-align: center;padding: 60px;">
+            <div class="about_inform" style="text-align: center;">
                 <h2 class="about_title">Welcome to Master Builders VS LTD</h2>
                 <p class="about_text">
                   Where we bring your tiling dreams to life. Our team consists of artisans in the art of tiling, from laying large-format tiles to creating intricate mosaics and custom tile cutting. We guarantee that every corner of your space will be crafted with unparalleled skill.
@@ -1216,7 +1276,7 @@ max-height: 100%;
                     <img src="large1.jpg" alt="Laying Large Tiles">
                     <img src="large4.jpg" alt="Laying Large Tiles">
                   </div>
-                  <div>
+                  <div class="block">
                     <img src="large3.jpg" alt="Laying Large Tiles">
                     <img src="large2.jpg" alt="Laying Large Tiles">
                   </div>
@@ -1224,13 +1284,13 @@ max-height: 100%;
             </div>
 
             
-            <div class="service" id="gutting_serv">
+            <div class="service srrvics4" id="gutting_serv">
               <div class="service_text">
                   <h3 class="serv_title_point"><a style="font-weight: 800;">CUSTOM TILE CUTTING</a></h3>
                   <p class="serv_text_point">Ensuring your space looks impeccable starts with precise tile cutting, a critical step in the tiling process. We pride ourselves on our ability to cut tiles with absolute precision, guaranteeing that each cut piece perfectly fits into the planned design. Our expertise and state-of-the-art equipment allow us to execute even the most demanding projects with high accuracy and impeccable quality.</p>
                   <p class="serv_text_point">We diligently work on each order, ensuring that every area of your space achieves an aesthetic and lasting appearance. Our approach to tile cutting is not just a process but an art that demands a high level of attention to detail and a commitment to quality. We strive for perfection in every step, and your satisfied look upon the completed work is our highest commendation.</p>
                 </div>
-              <div class="service_image">
+              <div class="service_image twice">
                 <div class="second_point_bottom">
                   <img src="gutting1.jpg" alt="Laying Large Tiles">
                 </div>
@@ -1251,7 +1311,7 @@ max-height: 100%;
                 <img src="mosaica1.jpg" alt="Laying Large Tiles">
                 <img src="mosaica4.jpg" alt="Laying Large Tiles">
               </div>
-              <div>
+              <div class="block">
                 <img src="mosaica3.jpg" alt="Laying Large Tiles">
                 <img src="mosaica6.jpg" alt="Laying Large Tiles">
               </div>
@@ -1264,7 +1324,7 @@ max-height: 100%;
               <h3 class="serv_title_point"><a style="font-weight: 800;">STONE INSTALLATION</a></h3>
               <p class="serv_text_point">For stone installation, we pride ourselves on the craftsmanship and attention to detail that each project demands. Our service includes the careful selection and placement of natural stone, ensuring structural integrity and aesthetic appeal. We understand the nuances of working with a variety of stone types, delivering a finish that's as durable as it is beautiful. Trust in our expertise for an installation that enhances the natural charm of your space.</p>
             </div>
-          <div class="service_image">
+          <div class="service_image twice">
             <div class="second_point_bottom">
               <img src="stone.jpg" alt="Laying Large Tiles">
             </div>
@@ -1285,7 +1345,7 @@ max-height: 100%;
             <img src="porcelain.jpeg" alt="Laying Large Tiles">
             <img src="porcelain3.jpeg" alt="Laying Large Tiles">
           </div>
-          <div>
+          <div class="block">
             <img src="porcelain1jpeg.jpeg" alt="Laying Large Tiles">
             <img src="porcelain4.jpeg" alt="Laying Large Tiles">
           </div>
@@ -1298,7 +1358,7 @@ max-height: 100%;
           <h3 class="serv_title_point"><a style="font-weight: 800;">EXTERIOR TILE LAYING</a></h3>
           <p class="serv_text_point">Exterior tile laying transforms outdoor spaces with durable, weather-resistant beauty. Our service specializes in selecting and installing robust tiles that withstand the elements, from freezing temperatures to scorching heat. With meticulous attention to detail, we ensure each tile is perfectly placed, creating inviting patios, walkways, and facades that merge functionality with aesthetic appeal.</p>
         </div>
-      <div class="service_image">
+      <div class="service_image twice">
         <div class="second_point_bottom">
           <img src="exterior1.jpg" alt="Laying Large Tiles">
         </div>
@@ -1315,7 +1375,7 @@ max-height: 100%;
         <p class="serv_text_point">Tile restoration is a meticulous process that breathes new life into worn and damaged tiled surfaces. Our approach begins with a thorough assessment to identify issues like cracking, chipping, or fading. We then meticulously clean, repair, or replace tiles, taking care to match the original design and color scheme. Our goal is to restore the tile's original glory, ensuring durability and preserving the character of the space. With our restoration service, your tiled areas will regain their former beauty and protection against future wear.</p>
       </div>
     <div class="service_image">
-      <div>
+      <div class="block">
         <img src="restor.jpg" alt="Laying Large Tiles">
         <img src="restor2.jpg" alt="Laying Large Tiles">
       </div>
@@ -1333,7 +1393,7 @@ max-height: 100%;
       <p class="serv_text_point">Our Tile Repair, Removal, and Disposal service is designed to address the challenges of repairing or replacing damaged tiles. At Master Builders VS LTD, we approach every repair job with precision and care, ensuring that the integrity of your tiled surfaces is maintained. Whether it's a cracked tile or a section that needs complete replacement, our team is equipped with the expertise to handle it.</p>
       <p class="serv_text_point">For removal and disposal, we ensure a hassle-free process. Our professionals carefully remove old or damaged tiles, ensuring minimal impact on the surrounding area. We also take responsibility for the environmentally friendly disposal of the removed materials. Trust us to leave your space ready for a fresh new look, with all the old remnants taken care of responsibly.</p>
     </div>
-  <div class="service_image">
+  <div class="service_image twice">
     <div class="second_point_bottom">
       <img src="rapair3.jpg" alt="Laying Large Tiles">
     </div>
@@ -1355,7 +1415,7 @@ max-height: 100%;
       <img src="mecanic5.jpg" alt="Laying Large Tiles">
       <img src="mecanic6.jpg" alt="Laying Large Tiles">
     </div>
-    <div>
+    <div class="block">
       <img src="mecanic3.jpg" alt="Laying Large Tiles">
       <img src="mecanic2.jpg" alt="Laying Large Tiles">
     </div>
@@ -1369,7 +1429,7 @@ max-height: 100%;
     <p class="serv_text_point">Underfloor heating systems represent a paradigm shift in the way spaces are warmed, offering an innovative, efficient, and uniform heating solution. These systems, which can be either electric or hydronic, are installed beneath the flooring to provide consistent, radiant heat across the entire surface area. The beauty of underfloor heating lies in its ability to distribute heat evenly, eliminating cold spots and creating a more comfortable living environment.</p>
     <p class="serv_text_point">At Master Builders VS LTD, we are experts in the installation and integration of underfloor heating systems. Our approach is grounded in a deep understanding of these systems' nuances, ensuring that every installation is tailored to the unique needs of each space. We take pride in our ability to work with a variety of flooring types, ensuring that the underfloor heating system functions optimally without compromising the integrity or aesthetic of your flooring.    </p>  
   </div>
-<div class="service_image">
+<div class="service_image twice">
   <div class="second_point_bottom">
     <img src="heating1.jpg" alt="Laying Large Tiles">
   </div>
@@ -1391,7 +1451,7 @@ max-height: 100%;
       <img src="gidro.jpg" alt="Laying Large Tiles">
       <img src="gidro2.jpg" alt="Laying Large Tiles">
     </div>
-    <div>
+    <div class="block">
       <img src="gidro3.jpg" alt="Laying Large Tiles">
       <img src="gidro4.jpg" alt="Laying Large Tiles">
     </div>
@@ -1406,7 +1466,7 @@ max-height: 100%;
     <p class="serv_text_point">Our process begins with a detailed consultation to understand your vision and requirements. Whether you prefer a traditional wood-burning fireplace, a modern gas fireplace, or an electric one, our team has the expertise to bring your vision to life. We take into account the style of your home, the desired location of the fireplace, and the necessary safety measures.</p>
     <p class="serv_text_point">Our installation process is thorough and precise, ensuring that the fireplace not only looks great but also functions safely and efficiently. We handle everything from the structural modifications required for installation to the final touches that integrate the fireplace seamlessly into your living space.</p>
   </div>
-<div class="service_image">
+<div class="service_image twice">
   <div class="second_point_bottom">
     <img src="fire.jpg" alt="Laying Large Tiles">
   </div>
@@ -1428,7 +1488,7 @@ max-height: 100%;
       <img src="anti5.jpg" alt="Laying Large Tiles">
       <img src="anti2.jpeg" alt="Laying Large Tiles">
     </div>
-    <div>
+    <div class="block">
       <img src="anti3.jpeg" alt="Laying Large Tiles">
       <img src="anti4.jpg" alt="Laying Large Tiles">
     </div>
@@ -1469,13 +1529,6 @@ max-height: 100%;
         </div>
       </div>
       <div class="b ">
-        <div class="footer_services">
-              <nav class="footer_nav-menu">
-              <ul class="footer_list_categories">
-
-              </ul>
-            </nav>
-        </div>
         
         <div class="footer-contacts">
           <h3 class="title_contacts">Contacts</h3>
@@ -1591,6 +1644,23 @@ document.getElementById("backToTopBtn").addEventListener("click", function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      let targetId = this.getAttribute('href');
+      let target = document.querySelector(targetId);
+      if (target) {
+        let headerHeight = document.querySelector('.header').offsetHeight;
+        let targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 
   </script>
 </html>
