@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*{
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  box-sizing: border-box; 
+}
+
+html
+body{
+  font-family:'General Sans', sans-serif;
+  font-style: normal;
+  color: #000000;
+  background: #F7F7F7;
+  height: 100%;
+ }
+h1,h2,h3,p, li,ul{
+  margin:0;
+}
+a{
+  text-decoration: none;
+}
+button{
+  border: 0;
+  cursor: pointer;
+ }
+button,
+a{
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+}
+address{
+  padding-top: 20px;
+}
+.mob-container{
+    display: none;
+}
+.main-container{
+	padding-left:20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  justify-content: space-between;
+	box-sizing: border-box;
+}
+.logo {
+  width: 30%;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #121F66;
+  text-align: center;
+}
+.logo_img{
+  width: 200px;
+}
+.navigation-menu{
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.list{
+  display: flex;
+  justify-content: space-around;
+}
+.item{
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 50px;
+  cursor: pointer;
+}
+.item-menu{
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #353232;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 4s;
+}
+
+.active{
+  color:#578cc6;
+}
+.active::after{  
+  content: ""; 
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #2196F3;;
+  border-radius: 2px;
+  bottom:-10px;
+  right: 0px;
+  color: #2196F3;
+}
+.item-menu:hover,
+.item-menu:focus,
+.item-menu:active{
+  color: #2196F3;
+  cursor: pointer;
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 3s;
+}
+.page{
+  width: 100%;
+  box-sizing: border-box;
+}
+.bg_section{
+  background-color: black;
+  height: 500px;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+.bg_image {
+ background-image: url(2.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: left;
+   flex: 0 0 55%;
+   height: 100%;
+   clip-path: polygon(0 0, 100% 0, 77% 84%, 0 95%);
+}
+.bg_content {
+  flex: 1;
+  padding-left: 5%;
+  text-align: left;
+  padding-top: 5%;
+  padding-right: 2%;
+}
+.bg_title{
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+ .bg_text{
+   color: #578cc6;
+   margin-top: 20px;
+   font-size: 22px;
+ }
+.block_about{
+  display: flex;
+    margin-top: 100px;
+    margin-left: 60px;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+}
+.about_title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.about_text{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 124%;
+  text-indent: 20px;
+}
+.serv_section{
+  margin-top: 100px;
+    margin-left: 60px;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    margin-right: 60px;
+}
+.menu-open{
+  display: none;
+}
+.footer_bg{
+  width: 100%;
+  background: black;
+  height: 324px;
+  padding-top: 60px;
+  position: relative;
+  padding-right: 50px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+.a{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;;
+  width: 100%;
+}
+.b{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;;
+  width: 100%;
+}
+.wrap_logo{
+  text-align: center;
+  margin-left: -40px;
+}
+.footer_logo{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #121F66;
+  text-align: center;
+}
+.footer_logo img{
+  width: 200px;
+}
+.footer-block{
+  display: flex;
+  justify-content: space-between;
+}
+.footer_item_menu,
+.footer_item_categories{
+  cursor: pointer;
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 4s;
+}
+.footer_menu_link,
+.footer_categories_link{
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 5s;
+}
+.footer_menu_link:hover,
+.footer_menu_link:focus,
+.footer_menu_link:active,
+.footer_categories_link:hover,
+.footer_categories_link:active,
+.footer_categories_link:focus{
+  color: #2196F3;
+  cursor: pointer;
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1s;
+}
+.footer_navigation-menu,
+.footer-contacts{
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+.footer_list_menu{
+  list-style: none;
+}
+.footer_list_categories{
+  font-style: normal;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  list-style: none;
+  text-transform: uppercase;
+  max-height: 204px;
+  columns: 2;
+  column-gap: 15px;
+}
+.footer_item_categories,
+.list-footer-item,
+.footer_item_menu{
+  margin-bottom:20px;
+}
+.list-footer-item{
+font-size: 16px;
+}
+.footer_services{
+  flex-wrap: wrap;
+}
+.footer-contacts{
+  text-align: right;
+}
+.in_footer{
+  background-color: white;
+  border-radius: 8px;
+}
+.wrap {
+  overflow-x: hidden;
+}
+.link_policy_text{
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 5s;
+  text-decoration: underline;
+}
+.link_policy_text:hover{
+  color: #2196F3;
+  cursor: pointer;
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1s;
+}
+.policy_btn_accept,
+.policy_btn_reject{
+  width: 210px;
+  height: 40px;
+  background-color: #578cc6;
+  color: white;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 24px;
+  border: #F7F7F7;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1s;
+  margin-right: 20px;
+}
+.policy_btn_accept:hover,
+.policy_btn_reject:hover{
+  background-color: #0056b3;
+  color:  #2196F3;
+  cursor: pointer;
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1s;
+}
+.header-text{
+  font-size: 3pc;
+}
+.content p {
+  text-align: justify;
+  max-width: 600px;
+  justify-content: flex-start;
+}
+.dropdown,
+.dropdown2 {
+  position: relative;
+}
+.dropdown-menu,
+.dropdown-menu2 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  background-color: #F7F7F7; 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width:200px;
+  border-radius:10px;
+  transition:
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 1s, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-menu li,
+.dropdown-menu2 li {
+  padding: 8px 12px;
+}
+.dropdown-menu li a,
+.dropdown-menu2 li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 50ms, 
+  background-color 250ms 50ms, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li a:hover {
+  color: #2196F3;
+  cursor: pointer;
+  font-size:18px;
+  transition:
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 1s, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* spacing between services */
+}
+
+.service_text {
+    flex: 1;
+    padding-right: 20px; /* spacing between text and image */
+    padding-left: 20px;
+    margin: 20px;
+}
+
+.service_image img {
+    width: 100%; /* adjust as needed */
+    max-width: 200px; /* adjust as needed */
+}
+
+.serv_wrapp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service {
+    display: flex;
+    flex-basis: 100%; /* Ensure the service takes full width */
+    border: 3px solid #8f8a8a;
+    border-radius: 20px;
+    padding: 20px 0px;
+}
+.serv_title{
+  margin-bottom: 30px;
+}
+.serv_title_point{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.service_image {
+    flex: 1; /* Both take up equal space */
+text-align: center;
+position: relative;
+}
+.second_point_bottom{
+  position: absolute;
+  top: 0;
+    right: 48%;
+}
+.second_point_top{
+position: absolute;
+    bottom: 0px;
+    right: 27%;
+}
+.serv_text_point{
+  font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 124%;
+    text-indent: 20px;
+}
+.service_image .image1,
+.service_image .image2 {
+    max-width: 100%;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service_image .image1 {
+    transform: translate(-10%, -10%); /* Adjust the values to control the diagonal offset */
+    z-index: 2;
+}
+
+.service_image .image2 {
+    transform: translate(10%, 10%); /* Adjust the values for the second image */
+    z-index: 1;
+}
+.srrvics4{
+  padding: 60px 0px;
+}
+
+@media screen and (max-width: 2000px){
+.content p {
+  max-width: 450px;
+}
+}
+
+@media screen and (max-width: 1800px){
+.content p {
+  max-width: 300px;
+}
+.content {
+  position: relative;
+  bottom: 37px;
+}
+.bg_section {
+  padding-bottom: 150px;
+}
+.bg_title {
+  font-size: 50px;
+}
+.bg_image {
+  height: 110%;
+}
+.bg_content {
+  padding-left: 2%;
+}
+.bg_section {
+  height: 800px;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+}
+
+@media screen and (max-width: 1600px){
+.dropdown-menu{
+  max-width: 160px;
+}
+.bg_section {
+  height: 750px;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+.bg_image {
+  height: 110%;
+}
+}
+
+@media screen and (max-width: 1400px){
+.main-container {
+  padding-left: 40px;
+}
+.item{
+  margin-right: 20px;
+}
+.footer-block{
+  flex-wrap: wrap;
+}
+.footer_bg {
+  height: 561px;
+}
+.wrap_logo{
+  margin-left: 0px;
+}
+.a {
+  width: 93%;
+}
+.footer_list_menu {
+  text-align: center;
+}
+.footer-contacts{
+  text-align: center;
+  padding-right: 110px;
+}
+.content {
+  bottom: 40px;
+}
+.header-text {
+  font-size: 2pc;
+}
+.content p {
+  max-width: 300px;
+}
+.bg_title {
+  font-size: 36px;
+}
+.bg_image {
+  height: 100%;
+}
+.bg_content {
+  padding-left: 0%;
+}
+.bg_text {
+  font-size: 18px;
+}
+.bg_section {
+  height: 600px;
+  padding-top: 100px;
+}
+}
+
+@media screen and (max-width: 1200px){
+.logo{
+  margin-left: 20px;
+}
+.item{
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.item-menu{
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #353232;
+}
+.img1{
+  width: 460px;
+  height: 460px;
+}
+.about_inform{
+  padding-top: 0px;
+}
+.about_title{
+margin-bottom: 10px;
+  }
+.about_more{
+  margin-top: 10px;
+}
+.img2{
+  display: none;
+}
+.footer_navigation-menu, 
+.footer-contacts {
+  font-size: 20px;
+}
+.footer-contacts{
+  padding-right: 70px;
+}
+.dropdown-menu{
+  max-width: 120px;
+}
+.bg_section {
+  height: 500px;
+  padding-top: 80px;
+  padding-bottom: 0px;
+}
+.bg_image {
+  height: 90%;
+}
+.bg_title {
+  padding-top: 40px;
+}
+}
+
+@media screen and (max-width: 999px){
+.main-container{
+	padding-left:20px;
+}
+.bg_title{
+  font-size: 40px;
+  max-width: 960px;
+}
+.block_about{
+  display: block;
+  margin-top: 72px;
+  margin-left: 30px;
+  margin-bottom: 36px;
+  margin-left: 0px;
+}
+.img1 {
+  margin: 0 auto;
+  text-align: center;
+  width: 560px;
+  height: 460px;
+}
+.img1 img {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+.about_inform{
+  padding-top: 40px;
+  padding-left: 50px;
+  text-align: center;
+}
+.img2{
+  width: 660px;
+  height: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer_bg {
+  padding-right: 0px;
+  padding-left: 100px;
+}
+.contacts_map{
+  padding-top: 40px;
+}
+.bg_title {
+  font-size: 28px;
+  padding-top: 20px;
+}
+.bg_text {
+  font-size: 16px;
+}
+.bg_image {
+  height: 80%;
+}
+.bg_section {
+  height: 400px;
+  padding-top: 60px;
+}
+}
+
+@media screen and (max-width: 900px){
+.logo_img {
+  width: 150px;
+}
+.navigation-menu {
+  width: 100%;
+}
+.list{
+  display: flex;
+  justify-content: space-around;
+}
+.block_about {
+  margin-top: 40px;
+}
+}
+
+@media screen and (max-width: 768px){
+.logo_img {
+  width: 110px;
+  padding-right: 10px;
+}
+.item-menu {
+  font-size: 12px;
+}
+.mob-container{
+  display: none;
+}
+.logo {
+margin-left: 0px;
+}
+.bg_title{
+  font-size: 30px;
+  max-width: 720px;
+}
+.bg_text{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.33;
+}
+.img1 {
+  width: 390px;
+  height: 320px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about_inform{
+  padding-top: 40px;
+  padding-left: 50px;
+}
+.footer_bg {
+  height: 554px;
+}
+.footer-contacts {
+  padding-right: 50px;
+}
+.dropdown-toggle {
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-toggle2 {
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-menu{
+  font-size: 14px;
+}
+.bg_section {
+  height: 350px;
+}
+.bg_title {
+  font-size: 24px;
+}
+.bg_text {
+  font-size: 14px;
+}
+.bg_image {
+  height: 80%;
+}
+}
+
+@media screen and (max-width: 669px){
+.footer_bg {
+  height: 900px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.footer_services {
+ padding-left: 50px;
+ padding-right: 50px;
+}
+.footer-contacts {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+}
+.big-number {
+  padding-bottom: 40px;
+}
+.content p {
+  padding-bottom: 20px;
+}
+.bg_section {
+  height: 300px;
+}
+.bg_title {
+  font-size: 20px;
+}
+.bg_text {
+  font-size: 12px;
+}
+}
+
+@media screen and (max-width: 540px){
+.navigation-menu{
+  display: none;
+  margin-left: auto;
+}
+.logo{
+  display: block;
+  order: 2;
+  margin-left: 0px;
+}
+.logo_img {
+  width: 120px;
+  padding-right: 0px;
+}
+.main-container {
+  margin-right: 30px;
+}
+.modal-content_main {
+  width: 260px;
+}
+.mob-container{
+  display: block;
+  padding-left: 25px;
+  padding-right: 20px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  z-index: 10;
+}
+.menu-open{
+  display: block;
+  background-color: transparent;
+  border: none;
+  padding-right: 0px;
+  order: 3;
+  padding-bottom: 30px;
+}
+.mob-menu{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color:#ffffff;
+  top: 0;
+  padding-top: 20px;
+}
+.mob-wrapp{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-close{
+  background-color:transparent;
+  border:none;
+  margin-left: auto;
+  display: block;
+  margin-right: 10px;
+}
+.mob-list {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #212121;
+  padding-left: 40px;
+  list-style: none;
+  justify-content: space-between;
+}
+.mob-list_item {
+  margin-bottom: 32px;
+}
+.text_cir{
+  font-weight: 600;
+}
+.img1 {
+  width: 100%;
+  height: 265px;
+  margin: auto;
+  text-align: center;
+}
+.have_account_main {
+  padding-top: 10px;
+}
+.footer_bg {
+  height: 1162px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.password-wrapper {
+  max-width: 100%;
+}
+.titel_main,
+.form_input,
+.register {
+  width: 100%;
+}
+.footer_services {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.footer_navigation-menu {
+  margin-top: 20px;
+  text-align: center;
+}
+.footer_list_categories {
+  text-align: center;
+}
+.footer-contacts {
+  text-align: center;
+}
+.footer_logo{
+  padding-bottom: 10px;
+}
+.a {
+	display: block;
+  width: 100%;
+}
+.b {
+  display: block;
+ }
+.footer_list_categories {
+  columns: 1;
+  height: auto;
+  max-height: 100%;
+}
+.wrap_logo{
+  max-width: 480px;
+}
+.policy_btn_accept,
+.policy_btn_reject{
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+.dropdown-menu2 {
+  margin-top: 10px;
+  max-width: 140px;
+  left: 0px;
+}
+.dropdown-menu, .dropdown-menu2 {
+  left: 0px;
+}
+.bg_section {
+  height: 240px;
+  padding-top: 30px;
+}
+.bg_content {
+  padding-top: 0%;
+}
+.bg_title {
+  font-size: 18px;
+}
+.bg_image {
+  height: 90%;
+}
+.about_title {
+  font-size: 18px;
+}
+.about_text {
+  font-size: 14px;
+  line-height: 140%;
+}
+.about_more {
+  font-size: 18px;
+}
+}
+@media screen and (max-width: 475px){
+.bg_image {
+  background-image: url(../12.webp);
+  flex: 0 0 50%;
+ }
+}
+@media screen and (max-width: 425px){
+  .bg_title {
+    font-size: 16px;
+}
+.bg_section {
+  height: 200px;
+  padding-top: 20px;
+}
+.bg_content {
+  max-width: 166px;
+}
+.bg_image {
+  height: 90%;
+}
+.bg_title {
+  padding-top: 0px;
+}
+.bg_text {
+  margin-top: 10px;
+  max-width: 166px;
+}
+}
+@media screen and (max-width: 320px){
+.mob-container{
+  max-width: 320px;
+  height: 100%;
+}
+.logo{
+  width: 120px;
+}
+.logo_img {
+  width: 120px;
+}
+.img1 {
+  width: 320px;
+  height: 267px;
+  margin: 0 auto;
+  text-align: left;
+}
+.form_input,
+.titel_main,
+.register{
+  height: 40px;
+}
+.menu-open {
+  padding-right: 0px;
+}
+.menu-close {
+  margin-right:10px;
+}
+.footer_bg {
+  height: 1162px;
+}
+.footer_navigation-menu {
+  margin-left: 0px;
+}
+.footer_list_categories {
+  columns: 1;
+  height: auto;
+max-height: 100%;
+}
+.footer_logo{
+  margin-left: 0px;
+}
+.footer-contacts {
+  padding-left: 0px;
+}
+}
+.serv_title{
+  text-align: center;
+}
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #000; /* Change the color as needed */
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  display: block; /* Make sure it's set to block to be visible */
+  width: 50px; /* Increase the width */
+  height: 50px; /* Increase the height */
+  font-size: 30px; /* Increase the size of the arrow icon */
+  text-align: center; /* Center the arrow icon */
+  line-height: 50px; /* Adjust line height to vertically center the arrow icon */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Adds a shadow for better visibility */
+}
+
+#backToTopBtn:hover {
+  background-color: #555; /* Optional: Change the hover state color */
+}
+
+
+</style>
+<header class="header">  
+  <div class="container main-container">
+  <a class="logo" href="">
+<img class="logo_img" src="img/logo/7smol.png" alt="Master Builders VS LTD Logo">
+</a>
+      <nav class="navigation-menu" id="main-nav">
+        <ul class="list mob-list">
+          <li class="item">
+            <a class="item-menu" href="#home">HOME</a>
+          </li>
+          <li class="item dropdown">
+            <a class="item-menu" href="#serv">SERVICES</a>
+            <ul class="dropdown-menu">
+              <li><a href="#large_serv">Laying Large Tiles</a></li>
+              <li><a href="#gutting_serv">Custom Tile Cutting</a></li>
+              <li><a href="#mosaic_serv">Laying Mosaic Tiles</a></li>
+              <li><a href="#stone_serv">Stone Installation</a></li>
+              <li><a href="#porselain_serv">Wide Format Porcelain Installation</a></li>
+              <li><a href="#exteriol_serv">Exterior Tile Laying</a></li>
+              <li><a href="#restoration_serv">Tile Restoration</a></li>
+              <li><a href="#repair_serv">Tile Repair - Removal and Disposal</a></li>
+              <li><a href="#removal_serv">Mechanical Removal of Deposits</a></li>
+              <li><a href="#heating_serv">Underfloor Heating Installation</a></li>
+              <li><a href="#hydra_serv">Wet Rooms and Tanks/Hydro Insulation</a></li>
+              <li><a href="#fireplace_serv">Fireplace Installation</a></li>
+              <li><a href="#antislip_serv">Anti-Slip and Safety Solutions</a></li>
+        </ul>
+        <li class="item">
+          <a class="item-menu" href="">PROJECTS</a>
+        </li>
+      </nav>
+
+    <div type="text" class="menu-open" data-menu-open>
+      <img class="z" src="img/menu.svg" alt="Mobile menu" width="35" height="35">
+    </div>
+
+  </div> 
+
+
+  <div class="mob-menu is-hidden mob-container" data-menu>
+    <div class="mob-wrapp ">
+      <div type="text" class="menu-close" data-menu-close>
+        <img src="img/clear.svg" alt="Button clear" width="35" height="35" >
+      </div>
+      <nav class="nav-menu">
+        <ul class="mob-list">
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="#home">Номе</a>
+          </li> 
+          <li class="mob-list_item dropdown2">
+            <a class="mob-list_link" href="#serv">SERVICES</a>
+            <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
+                      <ul class="dropdown-menu2">
+                        <li><a href="#large_serv">Laying Large Tiles</a></li>
+                        <li><a href="#gutting_serv">Custom Tile Cutting</a></li>
+                        <li><a href="#mosaic_serv">Laying Mosaic Tiles</a></li>
+                        <li><a href="#stone_serv">Stone Installation</a></li>
+                        <li><a href="#porselain_serv">Wide Format Porcelain Installation</a></li>
+                        <li><a href="#exteriol_serv">Exterior Tile Laying</a></li>
+                        <li><a href="#restoration_serv">Tile Restoration</a></li>
+                        <li><a href="#repair_serv">Tile Repair - Removal and Disposal</a></li>
+                        <li><a href="#removal_serv">Mechanical Removal of Deposits</a></li>
+                        <li><a href="#heating_serv">Underfloor Heating Installation</a></li>
+                        <li><a href="#hydra_serv">Wet Rooms and Tanks/Hydro Insulation</a></li>
+                        <li><a href="#fireplace_serv">Fireplace Installation</a></li>
+                        <li><a href="#antislip_serv">Anti-Slip and Safety Solutions</a></li>
+                      </ul>
+          </li>  
+ 
+  
+        </ul>
+      </nav>
+    </div>
+    </div>
+
+</header>
+
+
+<body>
+  
+  <div class="wrap">
+    <main class="page">
+        <section class="bg_section">
+          <div class="bg_image"></div>
+          <div class="bg_content">
+            <h1 class="bg_title" id="home">Create the perfect design <br>with our tile installation services</h1>
+            <p class="bg_text">Every tile in its place - your space, our craftsmanship</p>
+          </div>
+      </section>
+        <section class="block_about">
+            <div class="img1 wrapper" style="width: 100%;">
+                <img src="3.jpg" alt="ofice" style="width: 100%;">
+            </div>
+            <div class="about_inform" style="text-align: center;padding: 60px;">
+                <h2 class="about_title">Welcome to Master Builders VS LTD</h2>
+                <p class="about_text">
+                  Where we bring your tiling dreams to life. Our team consists of artisans in the art of tiling, from laying large-format tiles to creating intricate mosaics and custom tile cutting. We guarantee that every corner of your space will be crafted with unparalleled skill.
+                </p><br>
+                <p class="about_text">
+                  But that's not all; Master Builders VS LTD offers a comprehensive range of construction services. Whether it's repair work or a complete reconstruction, we have the experience and skills to ensure high quality for every aspect of your project. If you are looking for a full range of construction and renovation services, visit our main website to discover how we can assist you: https://www.mbvsltd.com.
+                </p><br>
+                <p class="about_text">
+                  Stay with us, and your next tile installation will be a marvel of beauty and comfort.
+                </p>
+            </div>
+        </section>
+
+        <section class="serv_section">
+          <h2 class="serv_title" id="serv">OUR SERVISES</h2>
+          <div class="serv_wrapp">
+
+            <div class="service" id="large_serv">
+                <div class="service_text">
+                    <h3 class="serv_title_point"><a style="font-weight: 800;">LARGE TILE INSTALLATION</a></h3>
+                    <p class="serv_text_point">Every tile, regardless of its size, deserves a professional installation. Our large-format tile installation service embodies this philosophy, delivering exceptional results even for the most challenging projects. We work with all types of tiles – from classic options to ultra-modern, wide-format products, transforming each space into a work of art.</p>
+                    <p class="serv_text_point">Our uniqueness lies in our detailed understanding of the characteristics of large-format tiles and the use of advanced installation techniques, ensuring a flawless appearance and durability. We possess all the necessary materials and tools to guarantee that each tile will be installed with utmost precision and care. Choosing us means not only receiving quality service but also confidence that your interior will look impeccable for years to come.</p>
+                  </div>
+                <div class="service_image">
+                  <div>
+                    <img src="large1.jpg" alt="Laying Large Tiles">
+                    <img src="large4.jpg" alt="Laying Large Tiles">
+                  </div>
+                  <div>
+                    <img src="large3.jpg" alt="Laying Large Tiles">
+                    <img src="large2.jpg" alt="Laying Large Tiles">
+                  </div>
+                </div>
+            </div>
+
+            
+            <div class="service" id="gutting_serv">
+              <div class="service_text">
+                  <h3 class="serv_title_point"><a style="font-weight: 800;">CUSTOM TILE CUTTING</a></h3>
+                  <p class="serv_text_point">Ensuring your space looks impeccable starts with precise tile cutting, a critical step in the tiling process. We pride ourselves on our ability to cut tiles with absolute precision, guaranteeing that each cut piece perfectly fits into the planned design. Our expertise and state-of-the-art equipment allow us to execute even the most demanding projects with high accuracy and impeccable quality.</p>
+                  <p class="serv_text_point">We diligently work on each order, ensuring that every area of your space achieves an aesthetic and lasting appearance. Our approach to tile cutting is not just a process but an art that demands a high level of attention to detail and a commitment to quality. We strive for perfection in every step, and your satisfied look upon the completed work is our highest commendation.</p>
+                </div>
+              <div class="service_image">
+                <div class="second_point_bottom">
+                  <img src="gutting1.jpg" alt="Laying Large Tiles">
+                </div>
+                <div class="second_point_top">
+                  <img src="gutting3.jpg" alt="Laying Large Tiles">
+
+                </div>
+              </div>
+          </div>
+          
+          <div class="service" id="mosaic_serv">
+            <div class="service_text">
+                <h3 class="serv_title_point"><a style="font-weight: 800;">LAYING MOSAIC TILES</a></h3>
+                <p class="serv_text_point">The art of laying mosaic tiles is a delicate process that transforms spaces into canvases of intricate beauty. Specializing in this service, we ensure that every tiny piece contributes to the overall masterpiece. Our skilled artisans meticulously place each tile, ensuring perfect alignment and symmetry that complements the unique design aspirations of our clients. Whether it's a splashback that becomes the focal point of a kitchen or an elaborate entryway floor design, our mosaic tile installation is guided by precision and artistic vision. Utilizing the latest techniques and the finest materials, we create durable and stunning surfaces that stand the test of time. Our commitment to excellence is evident in every tile we lay, promising an end result that not only meets but exceeds expectations. Engage with our services for an exquisite touch that adds timeless elegance to any space.</p>
+              </div>
+            <div class="service_image">
+              <div>
+                <img src="mosaica1.jpg" alt="Laying Large Tiles">
+                <img src="mosaica4.jpg" alt="Laying Large Tiles">
+              </div>
+              <div>
+                <img src="mosaica3.jpg" alt="Laying Large Tiles">
+                <img src="mosaica6.jpg" alt="Laying Large Tiles">
+              </div>
+            </div>
+        </div>
+
+        
+        <div class="service srrvics4" id="stone_serv">
+          <div class="service_text">
+              <h3 class="serv_title_point"><a style="font-weight: 800;">STONE INSTALLATION</a></h3>
+              <p class="serv_text_point">For stone installation, we pride ourselves on the craftsmanship and attention to detail that each project demands. Our service includes the careful selection and placement of natural stone, ensuring structural integrity and aesthetic appeal. We understand the nuances of working with a variety of stone types, delivering a finish that's as durable as it is beautiful. Trust in our expertise for an installation that enhances the natural charm of your space.</p>
+            </div>
+          <div class="service_image">
+            <div class="second_point_bottom">
+              <img src="stone.jpg" alt="Laying Large Tiles">
+            </div>
+            <div class="second_point_top">
+              <img src="stone2.jpg" alt="Laying Large Tiles">
+
+            </div>
+          </div>
+      </div>
+
+      <div class="service" id="porselain_serv">
+        <div class="service_text">
+            <h3 class="serv_title_point"><a style="font-weight: 800;">WIDE FORMAT PORCELAIN INSTALLATION</a></h3>
+            <p class="serv_text_point">Wide format porcelain tiles offer a sleek, contemporary look that can open up spaces with a smooth, seamless finish. Our wide format porcelain installation service is designed to handle the unique challenges these large tiles present. We ensure precision in every aspect, from subfloor preparation to the meticulous laying of each porcelain piece. The result is a stunning, durable surface that captures the eye and withstands the test of time.</p>
+          </div>
+        <div class="service_image">
+          <div>
+            <img src="porcelain.jpeg" alt="Laying Large Tiles">
+            <img src="porcelain3.jpeg" alt="Laying Large Tiles">
+          </div>
+          <div>
+            <img src="porcelain1jpeg.jpeg" alt="Laying Large Tiles">
+            <img src="porcelain4.jpeg" alt="Laying Large Tiles">
+          </div>
+        </div>
+    </div>
+
+    
+    <div class="service srrvics4" id="exteriol_serv">
+      <div class="service_text">
+          <h3 class="serv_title_point"><a style="font-weight: 800;">EXTERIOR TILE LAYING</a></h3>
+          <p class="serv_text_point">Exterior tile laying transforms outdoor spaces with durable, weather-resistant beauty. Our service specializes in selecting and installing robust tiles that withstand the elements, from freezing temperatures to scorching heat. With meticulous attention to detail, we ensure each tile is perfectly placed, creating inviting patios, walkways, and facades that merge functionality with aesthetic appeal.</p>
+        </div>
+      <div class="service_image">
+        <div class="second_point_bottom">
+          <img src="exterior1.jpg" alt="Laying Large Tiles">
+        </div>
+        <div class="second_point_top">
+          <img src="exterior2.jpg" alt="Laying Large Tiles">
+
+        </div>
+      </div>
+  </div>
+
+  <div class="service" id="restoration_serv">
+    <div class="service_text">
+        <h3 class="serv_title_point"><a style="font-weight: 800;">TILE RESTORATION</a></h3>
+        <p class="serv_text_point">Tile restoration is a meticulous process that breathes new life into worn and damaged tiled surfaces. Our approach begins with a thorough assessment to identify issues like cracking, chipping, or fading. We then meticulously clean, repair, or replace tiles, taking care to match the original design and color scheme. Our goal is to restore the tile's original glory, ensuring durability and preserving the character of the space. With our restoration service, your tiled areas will regain their former beauty and protection against future wear.</p>
+      </div>
+    <div class="service_image">
+      <div>
+        <img src="restor.jpg" alt="Laying Large Tiles">
+        <img src="restor2.jpg" alt="Laying Large Tiles">
+      </div>
+      <div>
+        <img src="restor5.jpg" alt="Laying Large Tiles">
+        <img src="restor4.jpg" alt="Laying Large Tiles">
+      </div>
+    </div>
+</div>
+
+
+<div class="service" id="repair_serv">
+  <div class="service_text">
+      <h3 class="serv_title_point"><a style="font-weight: 800;">TILE REPAIR</a></h3>
+      <p class="serv_text_point">Our Tile Repair, Removal, and Disposal service is designed to address the challenges of repairing or replacing damaged tiles. At Master Builders VS LTD, we approach every repair job with precision and care, ensuring that the integrity of your tiled surfaces is maintained. Whether it's a cracked tile or a section that needs complete replacement, our team is equipped with the expertise to handle it.</p>
+      <p class="serv_text_point">For removal and disposal, we ensure a hassle-free process. Our professionals carefully remove old or damaged tiles, ensuring minimal impact on the surrounding area. We also take responsibility for the environmentally friendly disposal of the removed materials. Trust us to leave your space ready for a fresh new look, with all the old remnants taken care of responsibly.</p>
+    </div>
+  <div class="service_image">
+    <div class="second_point_bottom">
+      <img src="rapair3.jpg" alt="Laying Large Tiles">
+    </div>
+    <div class="second_point_top">
+      <img src="rapair2.jpg" alt="Laying Large Tiles">
+
+    </div>
+  </div>
+</div>
+
+<div class="service" id="removal_serv">
+  <div class="service_text">
+      <h3 class="serv_title_point"><a style="font-weight: 800;">MACHANICAL REMOVAL OF DEPOSITS</a></h3>
+      <p class="serv_text_point">Our Mechanical Removal of Deposits service is designed to effectively eliminate the most persistent and tenacious deposits on your tiled surfaces. Over time, tiles can accumulate various types of deposits, including limescale, mold, grime, and even rust, which not only detract from their appearance but can also cause damage if left untreated.</p>
+      <p class="serv_text_point">We utilize state-of-the-art mechanical equipment and specialized cleaning agents that are resilient to deposits but gentle on your tiles. This approach ensures a thorough clean without risking damage to the tile's surface. Our team of experts is trained to work with a variety of tile materials, guaranteeing that we can restore the original luster and beauty of your tiled areas regardless of their condition or type.</p>
+    </div>
+  <div class="service_image">
+    <div>
+      <img src="mecanic5.jpg" alt="Laying Large Tiles">
+      <img src="mecanic6.jpg" alt="Laying Large Tiles">
+    </div>
+    <div>
+      <img src="mecanic3.jpg" alt="Laying Large Tiles">
+      <img src="mecanic2.jpg" alt="Laying Large Tiles">
+    </div>
+  </div>
+</div>
+
+
+<div class="service" id="heating_serv">
+<div class="service_text">
+    <h3 class="serv_title_point"><a style="font-weight: 800;">UNDERFLOOR HEATING INSTALLATION</a></h3>
+    <p class="serv_text_point">Underfloor heating systems represent a paradigm shift in the way spaces are warmed, offering an innovative, efficient, and uniform heating solution. These systems, which can be either electric or hydronic, are installed beneath the flooring to provide consistent, radiant heat across the entire surface area. The beauty of underfloor heating lies in its ability to distribute heat evenly, eliminating cold spots and creating a more comfortable living environment.</p>
+    <p class="serv_text_point">At Master Builders VS LTD, we are experts in the installation and integration of underfloor heating systems. Our approach is grounded in a deep understanding of these systems' nuances, ensuring that every installation is tailored to the unique needs of each space. We take pride in our ability to work with a variety of flooring types, ensuring that the underfloor heating system functions optimally without compromising the integrity or aesthetic of your flooring.    </p>  
+  </div>
+<div class="service_image">
+  <div class="second_point_bottom">
+    <img src="heating1.jpg" alt="Laying Large Tiles">
+  </div>
+  <div class="second_point_top">
+    <img src="heating2.jpg" alt="Laying Large Tiles">
+
+  </div>
+</div>
+</div>
+
+<div class="service" id="hydra_serv">
+  <div class="service_text">
+      <h3 class="serv_title_point"><a style="font-weight: 800;">WET ROOMS AND TANKS/HYDRO INSULATION</a></h3>
+      <p class="serv_text_point">Wet rooms and tanks, as well as hydro insulation, are specialized services that require expertise and precision. At Master Builders VS LTD, we excel in creating functional and stylish wet rooms, ensuring that every aspect of the room is waterproof and efficiently designed. Our team is skilled in the installation of waterproof tanks and hydro insulation systems that prevent any water leakage or damage, making your space safe and enduring.</p>
+      <p class="serv_text_point">The process involves meticulous planning and execution, utilizing high-quality materials and advanced techniques. We pay close attention to the details, from the slope of the floor for proper drainage to the selection of the right waterproofing materials. Our hydro insulation solutions are top-notch, providing a robust barrier against moisture and water ingress.</p>
+    </div>
+  <div class="service_image">
+    <div>
+      <img src="gidro.jpg" alt="Laying Large Tiles">
+      <img src="gidro2.jpg" alt="Laying Large Tiles">
+    </div>
+    <div>
+      <img src="gidro3.jpg" alt="Laying Large Tiles">
+      <img src="gidro4.jpg" alt="Laying Large Tiles">
+    </div>
+  </div>
+</div>
+
+
+<div class="service" id="fireplace_serv">
+<div class="service_text">
+    <h3 class="serv_title_point"><a style="font-weight: 800;">FIREPLACE INSTALLATIOM</a></h3>
+    <p class="serv_text_point">Fireplace installation is a service that combines aesthetics with functionality, creating a focal point in your home that is both beautiful and practical. At Master Builders VS LTD, we specialize in the professional installation of various types of fireplaces, tailored to the specific needs and preferences of our clients.</p>
+    <p class="serv_text_point">Our process begins with a detailed consultation to understand your vision and requirements. Whether you prefer a traditional wood-burning fireplace, a modern gas fireplace, or an electric one, our team has the expertise to bring your vision to life. We take into account the style of your home, the desired location of the fireplace, and the necessary safety measures.</p>
+    <p class="serv_text_point">Our installation process is thorough and precise, ensuring that the fireplace not only looks great but also functions safely and efficiently. We handle everything from the structural modifications required for installation to the final touches that integrate the fireplace seamlessly into your living space.</p>
+  </div>
+<div class="service_image">
+  <div class="second_point_bottom">
+    <img src="fire.jpg" alt="Laying Large Tiles">
+  </div>
+  <div class="second_point_top">
+    <img src="fire2.jpg" alt="Laying Large Tiles">
+
+  </div>
+</div>
+</div>
+
+<div class="service" id="antislip_serv">
+  <div class="service_text">
+      <h3 class="serv_title_point"><a style="font-weight: 800;">ANTI-SLIP AND SAFETY SOLUTIONS</a></h3>
+      <p class="serv_text_point">Anti-slip and safety solutions are crucial for maintaining safe and secure environments in both residential and commercial properties.Our services include the application of high-quality anti-slip coatings and treatments to a variety of surfaces such as tiles, stone, and other flooring materials. These treatments significantly reduce the risk of slips and falls, particularly in areas prone to wetness or high foot traffic. Our solutions are ideal for bathrooms, kitchens, public areas, and any spaces where safety is a priority.</p>
+      <p class="serv_text_point">In addition to anti-slip treatments, we offer a range of safety solutions including the installation of handrails, non-slip stair treads, and safety signage. Our team assesses your space to identify potential hazards and recommends the best solutions to address these risks.</p>
+    </div>
+  <div class="service_image">
+    <div>
+      <img src="anti5.jpg" alt="Laying Large Tiles">
+      <img src="anti2.jpeg" alt="Laying Large Tiles">
+    </div>
+    <div>
+      <img src="anti3.jpeg" alt="Laying Large Tiles">
+      <img src="anti4.jpg" alt="Laying Large Tiles">
+    </div>
+  </div>
+</div>
+        </div>
+      </section>
+    
+    </main>
+</div>
+
+<button id="backToTopBtn" title="Go to top">⬆️</button>
+</body>
+<footer class="footer_bg">
+  <div class="footer-block">
+      <div class="a">
+        <div class="wrap_logo" style="display: flex;flex-direction: column;">
+          <a class="footer_logo_link" href="">
+            <span class="footer_logo">
+              <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo">
+            </span>
+          </a>
+        </div>
+        <div class="footer-menu">
+          <nav class="footer_navigation-menu">
+            <ul class="footer_list_menu">
+              <li class="footer_item_menu">
+                <a class="footer_menu_link" href="#home">HOME</a>
+              </li>
+              <li class="footer_item_menu">
+                <a class="footer_menu_link" href="#serv">SERVICES</a>
+              </li>
+              <li class="footer_item_menu">
+                <a class="footer_menu_link" href="">PROJECTS</a>
+              </li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="b ">
+        <div class="footer_services">
+              <nav class="footer_nav-menu">
+              <ul class="footer_list_categories">
+
+              </ul>
+            </nav>
+        </div>
+        
+        <div class="footer-contacts">
+          <h3 class="title_contacts">Contacts</h3>
+          <address>
+          <ul class="footer_list_menu" >
+            <li class= "list-footer-item"><a class="foter-contacts-mail" href="mailto:project@mbvsltd.com">project@mbvsltd.com</a></li>
+            <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:+4475 2545 9552">+4475 2545 9552</a></li>
+            <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:+4420 3539 1924">+4420 3539 1924</a></li>
+          </ul>
+          </address>
+          <div class="sety_footer">
+      <a href="https://www.yell.com/biz/master-builders-vs-ltd-harrow-8851698/" target="_blank">
+    <img class="yell_footer" src="img/yell-icon.png" alt="Yell" style="width: 35px; height: 35px;background-color: #03031a;border-radius: 8px;">
+      </a>
+      <a href="https://www.linkedin.com/in/vitalii-sopit-8ba5b5162/" target="_blank">
+    <img class="in_footer" src="img/in-icon.png" alt="LinkedIn" style="width: 35px; height: 35px;background-color: #03031a;">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61551452585348" target="_blank">
+    <img class="in_footer" src="img/facebook.png" alt="Facebook" style="width: 35px; height: 35px; background-color: #03031a;">
+      </a>
+      <a href="https://www.instagram.com/masterbuildersvsltd/?next=%2F" target="_blank">
+    <img class="in_footer" src="img/instagram.webp" alt="Instagram" style="width: 35px; height: 35px;background-color: #03031a;">
+      </a>
+      <a href="https://wa.me/447525459552?text=Online%20assistance%20here" target="_blank">
+    <img class="in_footer" src="img/whatsapp1.webp" alt="WhatsApp" style="width: 35px; height: 35px;background-color: #03031a;">
+      </a>
+      </div>
+        </div>
+      </div>
+  </div>
+</footer>
+<script>
+
+  // Ждем события DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', function() {
+  var currentUrl = window.location.href;
+  var menuLinks = document.querySelectorAll('.item-menu');
+  
+  for (var i = 0; i < menuLinks.length; i++) {
+  // Получаем URL ссылки
+  var linkUrl = menuLinks[i].getAttribute('href');
+  
+  // Проверяем, соответствует ли текущий URL ссылке в меню
+  if (currentUrl === linkUrl) {
+    // Если да, то добавляем класс "active" к элементу меню
+    menuLinks[i].classList.add('active');
+  }
+  }
+  });
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    var toggles2 = document.querySelectorAll('.dropdown-toggle2');
+    
+    toggles2.forEach(function(toggle) {
+        toggle.addEventListener('click', function(event) {
+            event.stopPropagation(); // чтобы предотвратить всплытие события
+            var menu = this.nextElementSibling;
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+    });
+  
+    // Дополнительно: закрыть меню при нажатии вне его на мобильной версии
+    document.body.addEventListener('click', function(event) {
+        if (!event.target.closest('.dropdown2')) {
+            var menus = document.querySelectorAll('.mob-menu .dropdown-menu2');
+            menus.forEach(function(menu) {
+                menu.style.display = 'none';
+            });
+        }
+    });
+  });
+  
+  (() => {
+  const refs = {
+    openMenuBtn: document.querySelector("[data-menu-open]"),
+    closeMenuBtn: document.querySelector("[data-menu-close]"),
+    menu: document.querySelector("[data-menu]"),
+    body: document.querySelector("body"),
+    menuList: document.querySelector(".mob-list"),
+  };
+
+  refs.openMenuBtn.addEventListener("click", toggleMenu);
+  refs.closeMenuBtn.addEventListener("click", toggleMenu);
+  refs.menuList.addEventListener("click", removeMenu);
+
+  function toggleMenu() {
+    refs.menu.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+  }
+  function removeMenu() {
+    refs.menu.classList.add("is-hidden");
+    refs.body.classList.remove("no-scroll");
+  }
+})();
+  
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("backToTopBtn").addEventListener("click", function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
+
+  </script>
+</html>
