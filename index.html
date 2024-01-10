@@ -508,7 +508,7 @@ position: absolute;
 
 .service_image .image2 {
     transform: translate(10%, 10%); /* Adjust the values for the second image */
-    z-index: 1;
+    z-index: 9;
 }
 .srrvics4{
   padding: 120px 0px;
@@ -516,6 +516,113 @@ position: absolute;
 .about_inform{
   text-align: center;
   padding: 60px;
+}
+.project_section {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+.project_subtitle {
+  font-size: 2rem;
+  margin-bottom: 60px;
+}
+
+.project_blocks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project_block {
+  width: 50%;
+  padding: 0 15px;
+}
+
+.project_block_title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.project_image {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project_image:hover {
+  transform: scale(1.05);
+}
+.project_images img{
+  width: 240px;
+}
+.image_modal {
+  z-index: 1001; /* Ensure this number is higher than the z-index of your header */
+}
+
+.modal,
+.modal2 {
+  display: none;
+  align-items: center; /* Align children vertically in the center */
+  justify-content: center; /* Align children horizontally in the center */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+  z-index: 1001;
+  padding: 10px; /* Add some padding */
+}
+
+.modal-content,
+.modal-content2 {
+  max-width: 90%; /* Adjust if needed */
+  max-height: 94vh; /* Adjust if needed, considering the padding */
+  margin: auto; /* This can be removed since we're using flex */
+  display: block;
+}
+
+.close,
+.close2 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev, .next,
+.prev2, .next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next,
+.next2 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.prev2:hover, .next2:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 @media screen and (max-width: 2000px){
 .content p {
@@ -833,6 +940,18 @@ display: flex;
 }
 .service_image {
     padding-right: 0px;
+}
+.project_blocks {
+    display: block;
+}
+.project_block {
+    width: 100%;
+}
+.project_block_title:nth-child(2){
+  padding-top: 20px;
+}
+.project_images img {
+    width: 200px;
 }
 }
 
@@ -1515,11 +1634,58 @@ max-height: 100%;
 </div>
         </div>
       </section>
+      
+      <section class="project_section">
+        <h2 class="project_subtitle">Our Projects</h2>
+        <div class="project_blocks">
+          <div class="project_block" id="project1">
+            <h3 class="project_block_title">Project 1</h3>
+            <div class="project_images project1_images" style="align-items: center;">
+              <img class="gallery-image" src="proj/proj1_1 (1).jpeg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image" src="proj/proj1_1 (2).jpeg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image" src="proj/proj1_1 (3).jpeg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image" src="proj/proj1_1 (4).jpeg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image" src="proj/proj1_1 (6).jpeg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image" src="proj/proj1_1 (1).jpg" alt="Project 1 Image" class="project_image">
+              <!-- Add more images as needed -->
+            </div>
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="img01">
+              <div class="caption"></div>
+              <a class="prev">&#10094;</a>
+              <a class="next">&#10095;</a>
+            </div>
+            
+          </div>
+          <div class="project_block " id="project2">
+            <h3 class="project_block_title">Project 2</h3>
+            <div class="project_images project2_images">
+              <img class="gallery-image2" src="proj/proj2_2 (1).jpg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image2" src="proj/proj2_2 (2).jpg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image2" src="proj/proj2_2 (3).jpg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image2" src="proj/proj2_2 (4).jpg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image2" src="proj/proj2_2 (5).jpg" alt="Project 1 Image" class="project_image">
+              <img class="gallery-image2" src="proj/proj2_2 (6).jpg" alt="Project 1 Image" class="project_image">
+            </div>
+          </div>
+          <div id="myModal2" class="modal2">
+            <span class="close2">&times;</span>
+            <img class="modal-content2" id="img02">
+            <div class="caption2"></div>
+            <a class="prev2">&#10094;</a>
+            <a class="next2">&#10095;</a>
+          </div>
+        </div>
+      </section>
+      
     
     </main>
 </div>
 
 <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+
 </body>
 <footer class="footer_bg">
   <div class="footer-block">
@@ -1531,6 +1697,10 @@ max-height: 100%;
             </span>
           </a>
         </div>
+
+
+
+        
         <div class="footer-menu">
           <nav class="footer_navigation-menu">
             <ul class="footer_list_menu">
@@ -1706,7 +1876,146 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementsByClassName("caption")[0];
+  var span = document.getElementsByClassName("close")[0];
+  var body = document.body;
+  var images = document.getElementsByClassName('gallery-image');
+  var currentImageIndex;
+
+  // Function to show an image in the modal
+  function showImage(index) {
+    currentImageIndex = index;
+    modalImg.src = images[currentImageIndex].src;
+    captionText.innerHTML = images[currentImageIndex].alt;
+    modal.style.display = "block";
+    body.classList.add('modal-open');
+  }
+
+  // Functions to navigate through images
+  function showPrevImage() {
+    showImage((currentImageIndex > 0) ? currentImageIndex - 1 : images.length - 1);
+  }
+
+  function showNextImage() {
+    showImage((currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0);
+  }
+
+  // Event listener to open modal on image click
+  Array.from(images).forEach(function(image, index) {
+    image.addEventListener('click', function() {
+      if (window.innerWidth > 640) {
+        showImage(index);
+      }
+    });
+  });
+
+  // Event listener to close the modal
+  span.addEventListener('click', function() {
+    modal.style.display = "none";
+    body.classList.remove('modal-open');
+  });
+
+  // Event listeners for navigation arrows
+  document.querySelector(".prev").addEventListener('click', showPrevImage);
+  document.querySelector(".next").addEventListener('click', showNextImage);
+
+  // Event listener for keyboard navigation
+  window.addEventListener('keydown', function(e) {
+    if (modal.style.display === "block") {
+      if (e.key === 'ArrowLeft') {
+        showPrevImage();
+      } else if (e.key === 'ArrowRight') {
+        showNextImage();
+      }
+    }
+  });
+
+  // Event listener to close the modal when clicking outside the image
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      body.classList.remove('modal-open');
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var modal2 = document.getElementById("myModal2");
+  var modalImg2 = document.getElementById("img02");
+  var captionText2 = document.getElementsByClassName("caption2")[0];
+  var span2 = document.getElementsByClassName("close2")[0];
+  var body = document.body;
+  var images2 = document.getElementsByClassName('gallery-image2');
+  var currentImageIndex2;
+
+  // Function to show an image in the second modal
+  function showImage2(index2) {
+    currentImageIndex2 = index2;
+    modalImg2.src = images2[currentImageIndex2].src;
+    captionText2.innerHTML = images2[currentImageIndex2].alt;
+    modal2.style.display = "block";
+    body.classList.add('modal-open');
+  }
+
+  // Functions to navigate through images in the second modal
+  function showPrevImage2() {
+    if (currentImageIndex2 > 0) {
+      showImage2(currentImageIndex2 - 1);
+    } else {
+      showImage2(images2.length - 1);
+    }
+  }
+
+  function showNextImage2() {
+    if (currentImageIndex2 < images2.length - 1) {
+      showImage2(currentImageIndex2 + 1);
+    } else {
+      showImage2(0);
+    }
+  }
+
+  // Event listener to open the second modal on image click
+  Array.from(images2).forEach(function(image, index2) {
+    image.addEventListener('click', function() {
+      showImage2(index2);
+    });
+  });
+
+  // Event listener to close the second modal
+  span2.addEventListener('click', function() {
+    modal2.style.display = "none";
+    body.classList.remove('modal-open');
+  });
+
+  // Event listeners for navigation arrows in the second modal
+  document.querySelector(".prev2").addEventListener('click', showPrevImage2);
+  document.querySelector(".next2").addEventListener('click', showNextImage2);
+
+  // Event listener for keyboard navigation in the second modal
+  window.addEventListener('keydown', function(e) {
+    if (modal2.style.display === "block") {
+      if (e.key === 'ArrowLeft') {
+        showPrevImage2();
+      } else if (e.key === 'ArrowRight') {
+        showNextImage2();
+      }
+    }
+  });
+
+  // Event listener to close the second modal when clicking outside the image
+  window.addEventListener('click', function(event) {
+    if (event.target === modal2) {
+      modal2.style.display = "none";
+      body.classList.remove('modal-open');
+    }
+  });
+});
 
 
   </script>
+
 </html>
