@@ -84,8 +84,6 @@ body {
 }
 .main-container{
 	padding-left:20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -166,7 +164,7 @@ body {
   display: flex;
   box-sizing: border-box;
   position: relative;
-  margin-top: 118px;
+  margin-top: 78px;
 }
 .bg_image {
  background-image: url(2.jpg);
@@ -610,6 +608,10 @@ position: absolute;
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
+.prev,
+.prev2{
+  left: 0px;
+}
 
 .next,
 .next2 {
@@ -623,6 +625,52 @@ position: absolute;
 
 .prev2:hover, .next2:hover {
   background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+/* ВАТСАП  */
+#whatsapp-icon {
+  position: fixed;
+  bottom: 200px;
+  right: 100px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+#whatsapp-icon img {
+  width: 70px;
+  height: 70px;
+}
+#whatsapp-icon a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+#whatsapp-icon span {
+  color: #122f06;
+  font-size: 14px;
+  background-color: rgb(150 195 166 / 60%);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: -82px;
+  margin-top: 95px;
+  z-index: 99999;
+  font-weight: 600;
+}
+#close-button {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  background-color: rgb(150 195 166 / 60%);
+  color: #122f06;
+  color: white;
+  padding: 2px 5px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 }
 @media screen and (max-width: 2000px){
 .content p {
@@ -787,6 +835,11 @@ margin-bottom: 10px;
     max-width: 220px;
 }
 }
+@media screen and (max-width: 1068px){
+.project_images img {
+    width: 200px;
+}
+}
 @media screen and (max-width: 1015px){
 .second_point_bottom{
   position: static;
@@ -824,6 +877,15 @@ margin-bottom: 10px;
     padding-top: 0px;
 
 }
+.block_about {
+    margin-top: 60px;
+}
+.serv_section {
+    margin-bottom: 0px;
+}
+.project_subtitle {
+    margin-bottom: 30px;
+}
 .service {
     height: auto;
 }
@@ -832,6 +894,12 @@ margin-bottom: 10px;
 }
 .block{
   display: none;
+}
+}
+
+@media screen and (max-width: 908px){
+.project_images img {
+    width: 160px;
 }
 }
 
@@ -860,7 +928,7 @@ margin-bottom: 10px;
     margin-right: 20px;
 }
 .bg_section {
-    margin-top: 84px;
+  margin-top: 44px;
 }
 }
 
@@ -914,7 +982,7 @@ margin-left: 0px;
   font-size: 14px;
 }
 .bg_section {
-    margin-top: 50px;
+  margin-top: 10px;
 }
 .service {
     flex-wrap: wrap;
@@ -952,6 +1020,24 @@ display: flex;
 }
 .project_images img {
     width: 200px;
+}
+
+/* ВАТСАП  */
+#whatsapp-icon {
+  bottom: 80px;
+  right: 30px;
+}
+#whatsapp-icon img {
+  width: 60px;
+  height: 60px;
+}
+#whatsapp-icon span {
+  font-size: 14px;
+  margin-right: -76px;
+  margin-top: 74px;
+}
+#close-button {
+  font-size: 12px;
 }
 }
 
@@ -1178,7 +1264,7 @@ display: flex;
     font-size: 14px;
 }
 .bg_section {
-    margin-top: 43px;
+  margin-top: 23px;
 }
 .main-container {
     margin-bottom: 0px;
@@ -1198,6 +1284,9 @@ display: flex;
 .service_text {
     padding-right: 0px;
     padding-left: 0px;
+}
+.project_images img {
+    width: 260px;
 }
 }
 @media screen and (max-width: 425px){
@@ -1314,7 +1403,7 @@ max-height: 100%;
               <li><a href="#antislip_serv">Anti-Slip and Safety Solutions</a></li>
         </ul>
         <li class="item">
-          <a class="item-menu" href="">PROJECTS</a>
+          <a class="item-menu" href="#proj">PROJECTS</a>
         </li>
       </nav>
 
@@ -1355,7 +1444,7 @@ max-height: 100%;
                       </ul>
           </li>  
           <li class="mob-list_item">
-            <a class="mob-list_link" href="#home">PROJECTS</a>
+            <a class="mob-list_link" href="#proj">PROJECTS</a>
           </li> 
  
   
@@ -1635,7 +1724,7 @@ max-height: 100%;
         </div>
       </section>
       
-      <section class="project_section">
+      <section class="project_section" id="proj">
         <h2 class="project_subtitle">Our Projects</h2>
         <div class="project_blocks">
           <div class="project_block" id="project1">
@@ -1685,6 +1774,13 @@ max-height: 100%;
 
 <button id="backToTopBtn" title="Go to top">⬆️</button>
 
+<div id="whatsapp-icon" style="display:none;">
+  <a href="https://wa.me/447525459552?text=Online%20assistance%20here">
+    <span>start chat...</span>
+    <img src="whatsapp1.png" alt="WhatsApp Icon">
+  </a>
+  <div id="close-button" onclick="closeWhatsAppIcon()">X</div>
+</div>
 
 </body>
 <footer class="footer_bg">
@@ -1711,7 +1807,7 @@ max-height: 100%;
                 <a class="footer_menu_link" href="#serv">SERVICES</a>
               </li>
               <li class="footer_item_menu">
-                <a class="footer_menu_link" href="">PROJECTS</a>
+                <a class="footer_menu_link" href="#proj">PROJECTS</a>
               </li>
               </ul>
           </nav>
@@ -1751,6 +1847,8 @@ max-height: 100%;
 </footer>
 <script>
 
+
+  // Активне меню та скрол до выдповыдного блоку
   // Ждем события DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function() {
   var currentUrl = window.location.href;
@@ -1817,6 +1915,9 @@ max-height: 100%;
   }
 })();
   
+
+
+// Кнопка скролу догори
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -1827,7 +1928,6 @@ function scrollFunction() {
     document.getElementById("backToTopBtn").style.display = "none";
   }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 document.getElementById("backToTopBtn").addEventListener("click", function() {
   document.body.scrollTop = 0; // For Safari
@@ -1852,8 +1952,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 
 
-  document.querySelectorAll('.dropdown-menu2 a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+
+  // Мобільне меню
+  document.querySelectorAll('.mob-list_link, .dropdown-menu2 a').forEach(link => {
+  link.addEventListener('click', function(e) {
     e.preventDefault();
 
     // Закриття мобільного меню
@@ -1876,6 +1978,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+
+
+
+// Модка для проекта 1
 document.addEventListener('DOMContentLoaded', function() {
   var modal = document.getElementById("myModal");
   var modalImg = document.getElementById("img01");
@@ -1942,7 +2048,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
+// Модка для проекта 2
 document.addEventListener('DOMContentLoaded', function() {
   var modal2 = document.getElementById("myModal2");
   var modalImg2 = document.getElementById("img02");
@@ -2016,6 +2122,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// ватсап
+window.onload = function() {
+  setTimeout(function() {
+      document.getElementById('whatsapp-icon').style.display = 'block';
+  }, 5000);  // 5000 milliseconds = 5 seconds
+}
+
+function closeWhatsAppIcon() {
+  document.getElementById('whatsapp-icon').style.display = 'none';
+}
   </script>
 
 </html>
