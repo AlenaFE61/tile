@@ -714,15 +714,14 @@ position: absolute;
 
 
 
-.gallery-carousel {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 
 
 .gallery_carousel {
   display: flex;
   overflow-x: auto;
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
 .carousel-slide {
@@ -736,9 +735,8 @@ position: absolute;
   width: 33%;
 }
 
-/* Стилі для приховування скролбару */
 .gallery-carousel::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari, and Opera */
 }
 .gallery_text{
   font-style: normal;
@@ -752,7 +750,6 @@ position: absolute;
   padding: 0px 100px 50px 100px;
     text-align: center;
 }
-
 
 
 
